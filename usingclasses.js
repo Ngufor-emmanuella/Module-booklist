@@ -45,7 +45,7 @@ class store {
 // //     books.forEach((book) => UI.addBookToList(book));
 // //   }
 
-   static addBookToList(book) {
+  //  static addBookToList(book) {
 // //     const listSection = document.querySelector('#section');
 // //     listSection.style.border = '2px solid black';
 // //     const item = document.createElement('ul');
