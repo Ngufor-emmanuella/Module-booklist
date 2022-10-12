@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 30px;
+  margin: 20px;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid #000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+li {
+  margin: 3px;
+}
+
+.nav-list li {
+  border-right: 5px solid #000;
+  padding-right: 10px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+}
+
+.ulList {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+#section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#section ul:nth-child(odd) {
+  background: #ccc;
+}
+
+.effacer {
+  height: 35px;
+  margin: 0;
+}
+
+button {
+  font-size: medium;
+  float: right;
+  border: solid 2px black;
+  box-shadow: 3px 3px 0 0;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 0 0;
+}
+
+form h1 {
+  text-align: center;
+}
+
+form {
+  width: 35%;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 15%;
+}
+
+#contact-info {
+  display: none;
+}
+
+#add {
+  width: 10%;
+  align-self: flex-end;
+}
+
+.seprator {
+  width: 10%;
+  border-top: 1px solid #000;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 3px 2px;
+}
+
+footer {
+  width: 100%;
+  align-self: flex-start;
+  border: 3px solid #000;
+  padding: 5px;
+}
