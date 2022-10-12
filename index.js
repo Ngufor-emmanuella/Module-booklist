@@ -1,4 +1,4 @@
-import book from './module/modulebook.js';
+// import book from './module/modulebook.js';
 import * as dateTime from './module/moduleclock.js';
 
 const section = document.getElementById('section');
@@ -12,8 +12,7 @@ const box = JSON.parse(localStorage.getItem('box')) || [];
 const date = document.querySelector('.clock');
 date.innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec} ${dateTime.week}`;
 
-
-const b = new book (inputTitle.value,inputAuthor.value,Math.random());
+// const b = new book(inputTitle.value, inputAuthor.value, Math.random());
 const renderBooks = () => {
   let content = '';
   box.forEach((element, index) => {
@@ -27,7 +26,7 @@ const renderBooks = () => {
   </div>`;
   });
   section.innerHTML = content;
-  
+
   const removeBooks = () => {
     const removebtn = [...document.getElementsByClassName('romebtn')];
     removebtn.forEach((item) => {

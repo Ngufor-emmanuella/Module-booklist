@@ -135,11 +135,10 @@ footer {
   padding: 5px;
 }
 
-.clock{
+.clock {
   position: absolute;
   top: 5rem;
   right: 3rem;
   color: blue;
   font-size: 30px;
 }
-
