@@ -1,17 +1,22 @@
-export const section = document.getElementById('section');
+const section = document.getElementById('section');
 
-export const addButton = document.getElementById('add');
+const addButton = document.getElementById('add');
 
-export const inputTitle = document.getElementById('title');
+const inputTitle = document.getElementById('title');
 
-export const inputAuthor = document.getElementById('author');
+const inputAuthor = document.getElementById('author');
 
-export const errorMsg = document.getElementsByClassName('errormsg');
+const errorMsg = document.getElementsByClassName('errormsg');
 
-export const form = document.querySelector('form');
+const form = document.querySelector('form');
 
-export const box = JSON.parse(localStorage.getItem('box')) || [];
+const box = JSON.parse(localStorage.getItem('box')) || [];
 
+import book from './module/modulebook.js';
+import store from './module/modulestore.js';
+import UI from './module/moduleclassUI.js';
+
+const b = new book (inputTitle.value,inputAuthor.value,Math.random());
 const renderBooks = () => {
   let content = '';
   box.forEach((element, index) => {
@@ -25,7 +30,6 @@ const renderBooks = () => {
   </div>`;
   });
   section.innerHTML = content;
-  export content;
   
   const removeBooks = () => {
     const removebtn = [...document.getElementsByClassName('romebtn')];
@@ -39,7 +43,6 @@ const renderBooks = () => {
   };
   removeBooks();
 };
-export removeBooks;
 
 const addBooks = () => {
   addButton.addEventListener('click', () => {
@@ -59,7 +62,6 @@ const addBooks = () => {
     }
   });
 };
-export addBooks;
 renderBooks();
 addBooks();
            
