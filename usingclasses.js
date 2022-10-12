@@ -69,26 +69,6 @@ class UI {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
-}
-
-const addBooks = () => {
-  addButton.addEventListener('click', () => {
-    const titleMsg = inputTitle.value;
-    const autorMsg = inputAuthor.value;
-    if (titleMsg && autorMsg) {
-      const book = {
-        titleMsg,
-        autorMsg,
-      };
-      box.push(book);
-      localStorage.setItem('box', JSON.stringify(box));
-      renderBooks();
-      form.reset();
-    } else {
-      errorMsg.innerHTML = 'input title and author';
-    }
-  });
 };
 renderBooks();
 addBooks();
-           

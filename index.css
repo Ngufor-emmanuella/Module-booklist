@@ -134,3 +134,12 @@ footer {
   border: 3px solid #000;
   padding: 5px;
 }
+
+.clock{
+  position: absolute;
+  top: 5rem;
+  right: 3rem;
+  color: blue;
+  font-size: 30px;
+}
+

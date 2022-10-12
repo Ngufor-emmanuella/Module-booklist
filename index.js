@@ -1,20 +1,17 @@
+import book from './module/modulebook.js';
+import * as dateTime from './module/moduleclock.js';
+
 const section = document.getElementById('section');
-
 const addButton = document.getElementById('add');
-
 const inputTitle = document.getElementById('title');
-
 const inputAuthor = document.getElementById('author');
-
 const errorMsg = document.getElementsByClassName('errormsg');
-
 const form = document.querySelector('form');
-
 const box = JSON.parse(localStorage.getItem('box')) || [];
 
-import book from './module/modulebook.js';
-import store from './module/modulestore.js';
-import UI from './module/moduleclassUI.js';
+const date = document.querySelector('.clock');
+date.innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec} ${dateTime.week}`;
+
 
 const b = new book (inputTitle.value,inputAuthor.value,Math.random());
 const renderBooks = () => {
@@ -64,4 +61,3 @@ const addBooks = () => {
 };
 renderBooks();
 addBooks();
-           
