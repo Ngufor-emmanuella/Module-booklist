@@ -28,3 +28,5 @@ contactinfoLink.addEventListener('click', () => {
   formLink.classList.remove('active');
   booklistLink.classList.remove('active');
 });
+
+// this page makes each section to show or not
