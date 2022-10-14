@@ -1,35 +1,62 @@
-import Book from './modules/Book.js';
-import UI from './modules/UI.js';
-import store from './modules/store.js';
-import setTime from './modules/date.js';
-/* eslint-disable no-unused-vars */
-setTime();
-const submitBtn = document.querySelector('#add');
-const showmessage = document.querySelector('.errormsg');
-// Event: Display books
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
-// Event: Add to book list
-submitBtn.addEventListener('click', () => {
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
-  const id = Math.random();
-  if (title === '' || author === '') {
-    showmessage.innerHTML = '<h3 style=\'color:red;\' class=\'alert\'>Please fill in all values</h3>';
-    setTimeout(() => {
-      document.querySelector('.alert').remove();
-    }, 3000);
-  } else {
-  // Instatiate book because book class is not static
-    const book = new Book(title, author, id);
-    UI.addBookToList(book);
-    store.addBook(book);
-    UI.clearFields();
-  }
-});
+// import book from './module/modulebook.js';
+import * as dateTime from './module/moduleclock.js';
 
-// Remove from Book List
+const section = document.getElementById('section');
+const addButton = document.getElementById('add');
+const inputTitle = document.getElementById('title');
+const inputAuthor = document.getElementById('author');
+const errorMsg = document.getElementsByClassName('errormsg');
+const form = document.querySelector('form');
+const box = JSON.parse(localStorage.getItem('box')) || [];
 
-document.querySelector('#section').addEventListener('click', (e) => {
-  UI.deleteBook(e.target);
-  store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-});
+const date = document.querySelector('.clock');
+date.innerHTML = `${dateTime.date} ${dateTime.hour}:${dateTime.min}:${dateTime.sec} ${dateTime.week}`;
+
+// const b = new book(inputTitle.value, inputAuthor.value, Math.random());
+const renderBooks = () => {
+  let content = '';
+  box.forEach((element, index) => {
+    content += `<div index=${index}>
+    <ul class="list-of-books">
+      <li>${element.titleMsg}</li>
+      <li>${element.autorMsg}</li>
+    </ul>
+    <button class="romebtn" type="button" id=${index}>Remove</button>
+    <hr>
+  </div>`;
+  });
+  section.innerHTML = content;
+
+  const removeBooks = () => {
+    const removebtn = [...document.getElementsByClassName('romebtn')];
+    removebtn.forEach((item) => {
+      item.addEventListener('click', (elem) => {
+        box.splice(elem.target.id, 1);
+        localStorage.setItem('box', JSON.stringify(box));
+        renderBooks();
+      });
+    });
+  };
+  removeBooks();
+};
+
+const addBooks = () => {
+  addButton.addEventListener('click', () => {
+    const titleMsg = inputTitle.value;
+    const autorMsg = inputAuthor.value;
+    if (titleMsg && autorMsg) {
+      const book = {
+        titleMsg,
+        autorMsg,
+      };
+      box.push(book);
+      localStorage.setItem('box', JSON.stringify(box));
+      renderBooks();
+      form.reset();
+    } else {
+      errorMsg.innerHTML = 'input title and author';
+    }
+  });
+};
+renderBooks();
+addBooks();

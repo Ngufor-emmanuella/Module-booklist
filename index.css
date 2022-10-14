@@ -2,17 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: NoyhRW01-Medium, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
+  gap: 30px;
+  margin: 20px;
   height: 100vh;
-  overflow: hidden;
 }
 
 .logo {
@@ -21,14 +22,11 @@ body {
 }
 
 nav {
-  width: 97%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 3px solid #000;
-  position: fixed;
-  top: 0;
-  margin: 20px;
 }
 
 .nav-list {
@@ -44,20 +42,12 @@ li {
 }
 
 .nav-list li {
-  border-right: 3px solid #000;
+  border-right: 5px solid #000;
   padding-right: 10px;
 }
 
 .nav-list li a {
   text-decoration: none;
-}
-
-.active {
-  color: #486b8c;
-}
-
-.nav-list li a:hover {
-  color: #486b8c;
 }
 
 .ulList {
@@ -68,21 +58,18 @@ li {
 
 #section {
   width: 50%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: scroll;
 }
 
 .container {
   width: 70%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
   justify-content: center;
   align-items: center;
-  height: auto;
+  gap: 10px;
 }
 
 ul {
@@ -142,20 +129,16 @@ input {
 }
 
 footer {
-  width: 97%;
-  font-size: 30px;
-  font-weight: 600;
+  width: 100%;
+  align-self: flex-start;
   border: 3px solid #000;
   padding: 5px;
-  position: fixed;
-  bottom: 20px;
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
-.dateDisplay {
-  align-self: flex-end;
-  position: fixed;
+.clock {
+  position: absolute;
   top: 5rem;
-  right: 2rem;
+  right: 3rem;
+  color: blue;
+  font-size: 30px;
 }
