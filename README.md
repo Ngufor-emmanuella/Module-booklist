@@ -29,7 +29,7 @@ In this project i recreated a booklist app where i created a module folder addin
 ### Deployment
 
 - It will be deployed to the github page
--live version of project [repository link]( https://ngufor-emmanuella.github.io/module-booklist/)
+-live version of project [repository link](https://ngufor-emmanuella.github.io/Module-booklist/)
 
 ## Authors
 
